@@ -1,15 +1,11 @@
 import React from "react";
 
-import styles from "./style.module.scss";
+import Header from "./Header";
 
 const LandingHome = () => {
   return (
     <>
-      <div className={styles.section}>
-        <div className={styles.container}>
-            
-        </div>
-      </div>
+      <Header />
     </>
   );
 };
