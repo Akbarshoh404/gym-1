@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@400;700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.section {
+  width: 100%;
+  height: fit-content;
+  padding: 100px 0;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+  display: flex IAction;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 4rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .cardImage {
+    width: 50%;
+    min-width: 250px;
+    background-color: #333; // Placeholder for image
+    // Replace with actual image when available:
+    // background-image: url(../../../path-to-image.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .cardTexts {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 50%;
+
+    h3 {
+      font-family: "Oswald", sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.1rem;
+      color: #d3d3d3;
+      line-height: 1.7;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .card {
+    flex-direction: column;
+
+    .cardImage {
+      width: 100%;
+      height: 250px;
+      min-width: unset;
+    }
+
+    .cardTexts {
+      width: 100%;
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .cards {
+    gap: 20px;
+  }
+
+  .card {
+    .cardImage {
+      height: 200px;
+    }
+
+    .cardTexts {
+      padding: 1rem;
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
