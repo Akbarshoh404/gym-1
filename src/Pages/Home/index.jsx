@@ -1,8 +1,10 @@
 import React from "react";
 
-import Header from "./Header";
 import Navbar from "../../Layoutes/Navbar";
+
+import Header from "./Header";
 import Section1 from "./Section1";
+import Section2 from "./Section2";
 
 const LandingHome = () => {
   return (
@@ -10,6 +12,7 @@ const LandingHome = () => {
       <Navbar />
       <Header />
       <Section1 />
+      <Section2 />
     </>
   );
 };

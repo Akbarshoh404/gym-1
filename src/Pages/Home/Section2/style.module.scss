@@ -1,0 +1,142 @@
+// style.module.scss
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section {
+  min-height: fit-content;
+  padding: clamp(2rem, 8vw, 6.25rem) 0;
+  background-color: black;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 1rem 0;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 3rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.description {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.price {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #faff00;
+  margin-bottom: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.opportunities {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; // Pushes button to bottom
+
+  li {
+    padding: 0.75rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.25rem); // Larger text
+    opacity: 0.8;
+    font-family: "Roboto", sans-serif;
+
+    &:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #faff00;
+    }
+  }
+}
+
+.buyButton {
+  background: #faff00;
+  color: black;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 60%; // Consistent width for alignment
+
+  &:hover {
+    background: #faff00;
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .card {
+    padding: 3rem;
+  }
+
+  .buyButton {
+    padding: 0.6rem 1.5rem;
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
+
+  .cards {
+    gap: 3rem;
+  }
+}
